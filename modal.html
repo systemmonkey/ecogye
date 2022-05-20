@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>ECOGYE | Limpiemos juntos nuestra ciudad</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8"><!-- Favorite Icon -->
+    <link rel="apple-touch-icon" href="images/planos/fav.svg">
+    <link rel="shortcut icon" href="images/planos/fav.svg"><!-- Styles -->
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" type="text/css" href="fonts/helveticaNowText/stylesheet.css">
+    <link rel="stylesheet" type="text/css" href="scripts/vendors/slick/slick.css">
+    <link rel="stylesheet" type="text/css" href="scripts/vendors/slick/slick-theme.css">
+    <script src="scripts/vendors/jquery.js"></script>
+    <script src="scripts/vendors/slick/slick.js">
+    </script>
+  </head>
+  <body>
+    <nav class="navbar">
+      <ul class="navbar-brand">
+        <li><a href="index.html">ECOGYE <img src='images/flats/white.svg'></a></li>
+      </ul>
+      <ul class="navbar-menu">
+        <li><a><span id="responsive-navbar" onclick='openNav()'>&#9776;</span></a></li>
+        <li><a href='index.html'>Inicio</a></li>
+        <li><a href='activities.html'>Actividades</a></li>
+        <li><a href='market.html'>tienda</a></li>
+      </ul>
+    </nav>
+    <div id="foo">
+      <div id="sec4">
+        <div class="container">
+          <h2 class="color-white">Suscríbete para recibir noticias </br> y promociones</h2>
+          <input type="email" placeholder="jhon.doe@mail.com"><br>
+          <input class="btn btn-large btn-primary bnt-send" type="submit" value="Suscribirse">
+        </div>
+      </div>
+      <footer>
+        <div class="container">
+          <div class="container-copyright">
+            <p class="hl">ECOGYE se preocupa por ti y por el medio ambiente.</p>
+          </div>
+          <div class="socialbar">
+            <ul class="sc-links">
+              <li href="https://www.facebook.com/"><ion-icon name="logo-facebook" class="footer-icon"></ion-icon></li>
+              <li href="https://www.instagram.com/"><ion-icon name="logo-gitlab" class="footer-icon"></ion-icon></li>
+              <li href="https://www.gitlab.org/"><ion-icon name="logo-instagram" class="footer-icon"></ion-icon></li>
+            </ul>
+          </div>
+          <script src="scripts/vendors/feather.js"></script>
+          <script src="scripts/vendors/ionicons/ionicons.js"></script>
+          <script src="scripts/index.js"></script>
+          <script>
+            feather.replace();
+            
+            $(document).ready(function() {
+              $('.carousel').slick({
+                dots: true,
+                adaptiveHeight: true,
+                autoplay: true,
+                arrows: true
+              });
+            });
+            
+            //- navbar functions
+            //- Active function
+            function openNav() {
+              document.getElementById("responsive-menu").style. width="200px";
+              document.getElementById("main").style.marginLeft="200px";
+              document.getElementById("main").style.padding="16px";
+              document.getElementById("main").style.background="#41866B";
+              document.getElementById("main").style.overflow="hidden";
+              document.body.style.backgroundColor="rgba(0,0,0,.4)";
+              document.getElementById("menuicon").style.display="none";
+            }
+            
+            //- Shutdown function
+            function closenav() {
+              document.getElementById("responsive-menu").style. width="0";
+              document.getElementById("main").style.marginLeft="0";
+              document.getElementById("main").style.padding="0";
+              document.getElementById("main").style.background="#41866B";
+              document.getElementById("main").style.overflow="visible";
+              document.body.style.backgroundColor="white";
+              document.getElementById("menuicon").style.display="block";
+            }
+            
+            $(window).scroll(function() {
+              $('#animated').each(function() {
+                var imagePos=$(this).offset().top;
+                var topOfWindow=$(window).scrollTop();
+            
+                if(imagePos < topOfWindow+400) {
+                  $(this).addClass("slideLeft");
+                }
+              })
+            })
+            
+            $(function() {
+              var $parallaxBackground=$('.parallax-background');
+              $(window).on('scroll', function() {
+                var scroll=$(document).scrollTop();
+            
+                $parallaxBackground.css({
+                  'background-position':'20% ' +(-.2*scroll)+'px'
+                });
+              });
+            });
+            
+            //- Lazyload
+            var imgDefer = document.getElementsByTagName('img');
+            for (var i=0; i<imgDefer.length; i++) {
+              if(imgDefer[i].getAttribute('data-src')) {
+                imgDefer[i].setAttribute('src',imgDefer[i].getAttribute('data-src'));
+              }
+            }
+          </script>
+        </div>
+      </footer>
+    </div>
+  </body>
+</html>

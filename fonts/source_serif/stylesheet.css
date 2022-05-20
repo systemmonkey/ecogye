@@ -1,0 +1,15 @@
+@font-face {
+  font-family: "Source Serif";
+  src: url("SourceSerifPro-Regular.ttf");
+  src: url("SourceSerifPro-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Source Serif";
+  src: url("SourceSerifPro-Italic.ttf");
+  src: url("SourceSerifPro-Italic.ttf") format("truetype");
+  font-weight: normal;
+  font-style: italic;
+}
